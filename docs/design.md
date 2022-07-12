@@ -23,7 +23,7 @@ sequenceDiagram
 
     main ->> converter: New()
     activate converter
-    converter ->> converter: check format of Rego policy 
+    converter ->> converter: check format of Rego policy
     converter -->> main: *Converter
 
     main ->> server: New(*Feed, *Converter)
@@ -37,7 +37,7 @@ sequenceDiagram
     server ->> converter: Convert()
     converter -->> server: result
     server -->> [User]: response
-          
+
     deactivate feed
     deactivate converter
     deactivate server
