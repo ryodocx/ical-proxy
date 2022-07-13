@@ -13,7 +13,7 @@ func TestXxx(t *testing.T) {
 			Project:    os.Getenv("REDMINE_PROJECT"),
 			Url:        os.Getenv("REDMINE_URL"),
 			ApiKey:     os.Getenv("REDMINE_APIKEY"),
-			MaxEntries: 10,
+			MaxEntries: 3,
 		},
 	)
 
