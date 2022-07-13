@@ -1,9 +1,6 @@
 package feed
 
-type Entry struct {
-}
-
 type Feed interface {
-	Get() ([]*Entry, error)
+	Get() (jsonEntries []string, err error)
 	Healthcheck() error
 }
