@@ -1,16 +1,15 @@
-package version_test
+package issue_test
 
 import (
 	"os"
 	"testing"
 
-	"github.com/ryodocx/ical-proxy/pkg/feed/redmine/version"
+	version "github.com/ryodocx/ical-proxy/pkg/feed/redmine/issue"
 )
 
 func TestXxx(t *testing.T) {
 	feed, err := version.New(
 		&version.Config{
-			Project:    os.Getenv("REDMINE_PROJECT"),
 			Url:        os.Getenv("REDMINE_URL"),
 			ApiKey:     os.Getenv("REDMINE_APIKEY"),
 			MaxEntries: 10,

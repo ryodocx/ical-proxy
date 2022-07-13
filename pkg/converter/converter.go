@@ -1,5 +1,11 @@
 package converter
 
+import "github.com/open-policy-agent/opa/rego"
+
+func init() {
+	rego.New()
+}
+
 type Config struct {
 }
 
