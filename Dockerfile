@@ -8,6 +8,6 @@ COPY . .
 RUN go build .
 
 FROM alpine:3.16.0
-ENV LISTEN_ADDR=0.0.0.0:8080
+ENV ICALPROXY_LISTEN_ADDR=0.0.0.0:8080
 COPY --from=0 /ical-proxy .
 ENTRYPOINT [ "/ical-proxy" ]
