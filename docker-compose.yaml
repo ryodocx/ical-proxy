@@ -1,0 +1,10 @@
+version: "3"
+services:
+  ical-proxy:
+    image: ghcr.io/ryodocx/ical-proxy:v1.0.0
+    ports:
+      - 8080:8080
+    volumes:
+      - ./configs:/configs:ro
+    env_file:
+      - .env
