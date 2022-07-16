@@ -62,7 +62,31 @@ func (s *Server) healthcheck(w http.ResponseWriter, req *http.Request) {
 }
 
 func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
-	w.WriteHeader(http.StatusNotImplemented) // TODO
+	jsons, err := s.f.Get()
+	if err != nil {
+		w.Header().Add("REASON", "error occurred when Get()")
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	tmp := []interface{}{}
+	for _, j := range jsons {
+		v := map[string]interface{}{}
+		if err := json.Unmarshal([]byte(j), &v); err != nil {
+			w.Header().Add("REASON", "error occurred when json.Unmarshal()")
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		tmp = append(tmp, v)
+	}
+
+	ical, err := s.c.SimpleIcal(tmp)
+	if err != nil {
+		w.Header().Add("REASON", "error occurred when convert to iCal format")
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	w.Write([]byte(ical))
 }
 
 func (s *Server) ListenAndServe() error {
