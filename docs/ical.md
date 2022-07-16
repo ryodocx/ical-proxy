@@ -4,6 +4,8 @@ sample.ics
 ```
 X-COMMENT:コメント行 https://datatracker.ietf.org/doc/html/rfc5545#section-3.8.1.4
 BEGIN:VCALENDAR
+
+X-COMMENT:https://datatracker.ietf.org/doc/html/rfc5545#section-3.6.1
 BEGIN:VEVENT
 
 X-COMMENT:https://datatracker.ietf.org/doc/html/rfc5545#section-3.8.1.12

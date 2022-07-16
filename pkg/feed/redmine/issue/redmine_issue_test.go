@@ -10,8 +10,8 @@ import (
 func TestXxx(t *testing.T) {
 	feed, err := version.New(
 		&version.Config{
-			Url:        os.Getenv("REDMINE_URL"),
-			ApiKey:     os.Getenv("REDMINE_APIKEY"),
+			Url:        os.Getenv("ICALPROXY_TEST_REDMINE_URL"),
+			ApiKey:     os.Getenv("ICALPROXY_TEST_REDMINE_APIKEY"),
 			MaxEntries: 3,
 		},
 	)
