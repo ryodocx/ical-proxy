@@ -10,10 +10,6 @@ import (
 	"github.com/ryodocx/ical-proxy/pkg/util"
 )
 
-func init() {
-	rego.New()
-}
-
 type Config struct {
 	RegoPaths []string
 	RegoQuery string
