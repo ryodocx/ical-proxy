@@ -1,10 +1,13 @@
-FROM golang:1.18.3-alpine
+FROM golang:1.18.4-alpine
 ENV CGO_ENABLED=0
-WORKDIR /var/build
+WORKDIR /
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
 COPY . .
 RUN go build .
 
 FROM alpine:3.16.0
 ENV LISTEN_ADDR=0.0.0.0:8080
-COPY --from=0 /var/build/ical-proxy .
+COPY --from=0 /ical-proxy .
 CMD [ "/ical-proxy" ]

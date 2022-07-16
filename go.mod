@@ -20,6 +20,3 @@ require (
 	github.com/yashtewari/glob-intersection v0.1.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
-
-// TODO: remove
-replace github.com/ryodocx/go-redmine => ../go-redmine
