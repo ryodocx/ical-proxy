@@ -23,6 +23,7 @@ type Server struct {
 	s *http.Server
 	f feed.Feed
 	c *converter.Converter
+	q url.Values
 }
 
 func New(c *Config) (*Server, error) {
@@ -36,12 +37,7 @@ func New(c *Config) (*Server, error) {
 		c: c.Converter,
 	}
 	mux.HandleFunc("/healthz", s.healthcheck)
-
-	p := path.Join(c.Path)
-	if len(c.Query.Encode()) > 0 {
-		p += "?" + c.Query.Encode()
-	}
-	mux.HandleFunc(p, s.simpleIcal)
+	mux.HandleFunc(path.Join("/", c.Path), s.simpleIcal)
 	return s, nil
 }
 
@@ -62,6 +58,9 @@ func (s *Server) healthcheck(w http.ResponseWriter, req *http.Request) {
 }
 
 func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
+
+	// TODO: validate query params
+
 	jsons, err := s.f.Get()
 	if err != nil {
 		w.Header().Add("REASON", "error occurred when Get()")
