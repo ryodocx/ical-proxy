@@ -18,6 +18,9 @@ A proxy server convert to iCal from any sources
 
 ## Usage
 
+* Docker Image is [here](https://github.com/ryodocx/ical-proxy/pkgs/container/ical-proxy)
+  * `docker pull ghcr.io/ryodocx/ical-proxy:v1`
+
 ```sh
 # edit .env
 $ cat .env
