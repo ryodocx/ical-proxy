@@ -13,12 +13,17 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/ryodocx/go-redmine"
 	"github.com/ryodocx/ical-proxy/pkg/converter"
 	"github.com/ryodocx/ical-proxy/pkg/feed/redmine/issue"
 	"github.com/ryodocx/ical-proxy/pkg/server"
 	"github.com/ryodocx/ical-proxy/pkg/util"
 	"github.com/urfave/cli/v2"
 )
+
+func init() {
+	redmine.DebugMode = true
+}
 
 func main() {
 
@@ -112,7 +117,7 @@ func main() {
 					conf.Query = q
 				}
 
-				fmt.Printf("%#v\n", conf)
+				// fmt.Printf("%#v\n", conf)
 				i, err := issue.New(conf)
 				if err != nil {
 					return util.WrapError(err)
@@ -125,7 +130,7 @@ func main() {
 					RegoPaths: cCtx.StringSlice("rego-paths"),
 					RegoQuery: cCtx.String("rego-query"),
 				}
-				fmt.Printf("%#v\n", conf)
+				// fmt.Printf("%#v\n", conf)
 				c, err := converter.New(conf)
 				if err != nil {
 					return util.WrapError(err)
@@ -139,7 +144,7 @@ func main() {
 				} else {
 					serverConf.Query = q
 				}
-				fmt.Printf("%#v\n", serverConf)
+				// fmt.Printf("%#v\n", serverConf)
 			}
 
 			s, err := server.New(serverConf)
