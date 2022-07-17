@@ -813,8 +813,8 @@ github.com/russross/blackfriday/v2 v2.0.1/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQD
 github.com/russross/blackfriday/v2 v2.1.0 h1:JIOH55/0cWyOuilr9/qlrm0BSXldqnqwMsf35Ld67mk=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
 github.com/ryanuber/columnize v0.0.0-20160712163229-9b3edd62028f/go.mod h1:sm1tb6uqfes/u+d4ooFouqFdy9/2g9QGwK3SQygK0Ts=
-github.com/ryodocx/go-redmine v0.0.0-20220712175346-f62a2dbc776a h1:cfgnBL+7OQcDK/X3H7ioARVl52Vrnb/o5lq/GMpGTWE=
-github.com/ryodocx/go-redmine v0.0.0-20220712175346-f62a2dbc776a/go.mod h1:ky6lh01Kqh4YMu6BYRofSse2UyjlQ8SroPc92EjQrm4=
+github.com/ryodocx/go-redmine/v2 v2.0.0-rc0.0.20220717103701-ac60cc210ee4 h1:vhbFmzXpVLFViP5RUNQ/Oke/e8jsoBTgigqfCtmyKb8=
+github.com/ryodocx/go-redmine/v2 v2.0.0-rc0.0.20220717103701-ac60cc210ee4/go.mod h1:rlamy4zEnyhRgYuDrfk5OMbySKsBDl6gy+d3V8rXZS8=
 github.com/safchain/ethtool v0.0.0-20190326074333-42ed695e3de8/go.mod h1:Z0q5wiBQGYcxhMZ6gUqHn6pYNLypFAvaL3UvgZLR0U4=
 github.com/safchain/ethtool v0.0.0-20210803160452-9aa261dae9b1/go.mod h1:Z0q5wiBQGYcxhMZ6gUqHn6pYNLypFAvaL3UvgZLR0U4=
 github.com/satori/go.uuid v1.2.0/go.mod h1:dA0hQrYB0VpLJoorglMZABFdXlWrHn1NEOzdhQKdks0=

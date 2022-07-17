@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ryodocx/go-redmine"
+	"github.com/ryodocx/go-redmine/v2"
 	"github.com/ryodocx/ical-proxy/pkg/converter"
 )
 

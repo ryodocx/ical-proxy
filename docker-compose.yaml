@@ -1,7 +1,7 @@
 version: "3"
 services:
   ical-proxy:
-    image: ghcr.io/ryodocx/ical-proxy:v1.0.0
+    image: ghcr.io/ryodocx/ical-proxy:v1
     ports:
       - 8080:8080
     volumes:
