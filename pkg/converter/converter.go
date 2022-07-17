@@ -11,12 +11,14 @@ import (
 )
 
 type Config struct {
-	RegoPaths []string
-	RegoQuery string
+	RegoPaths         []string
+	RegoQuery         string
+	CalendarPropaties []string
 }
 
 type Converter struct {
-	rego *rego.PreparedEvalQuery
+	rego              *rego.PreparedEvalQuery
+	calendarPropaties []string
 }
 
 func New(c *Config) (*Converter, error) {
@@ -36,12 +38,17 @@ func New(c *Config) (*Converter, error) {
 	}
 
 	return &Converter{
-		rego: &pq,
+		rego:              &pq,
+		calendarPropaties: c.CalendarPropaties,
 	}, nil
 }
 
 func (s *Converter) SimpleIcal(input []interface{}) (string, error) {
 	output := "BEGIN:VCALENDAR"
+
+	for _, s := range s.calendarPropaties {
+		output = fmt.Sprintf("%s\n%s", output, s)
+	}
 
 	for _, i := range input {
 		rs, err := s.rego.Eval(context.Background(), rego.EvalInput(i))
