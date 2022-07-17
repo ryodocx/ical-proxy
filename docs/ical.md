@@ -1,5 +1,13 @@
 RFC: https://datatracker.ietf.org/doc/html/rfc5545
 
+* VCALENDAR
+  * https://datatracker.ietf.org/doc/html/rfc5545#section-3.6
+  * https://datatracker.ietf.org/doc/html/rfc5545#section-3.7
+  * https://docs.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxcical/321edfe2-7487-4262-9b31-9b4f8984012a
+* VEVENT
+  * https://datatracker.ietf.org/doc/html/rfc5545#section-3.6.1
+  * https://docs.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxcical/321edfe2-7487-4262-9b31-9b4f8984012a
+
 sample.ics
 ```
 X-COMMENT:コメント行 https://datatracker.ietf.org/doc/html/rfc5545#section-3.8.1.4
