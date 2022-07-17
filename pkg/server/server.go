@@ -3,12 +3,14 @@ package server
 import (
 	"context"
 	"encoding/json"
+	"log"
 	"net/http"
 	"net/url"
 	"path"
 
 	"github.com/ryodocx/ical-proxy/pkg/converter"
 	"github.com/ryodocx/ical-proxy/pkg/feed"
+	"github.com/ryodocx/ical-proxy/pkg/util"
 )
 
 type Config struct {
@@ -23,6 +25,7 @@ type Server struct {
 	s *http.Server
 	f feed.Feed
 	c *converter.Converter
+	q url.Values
 }
 
 func New(c *Config) (*Server, error) {
@@ -36,12 +39,7 @@ func New(c *Config) (*Server, error) {
 		c: c.Converter,
 	}
 	mux.HandleFunc("/healthz", s.healthcheck)
-
-	p := path.Join(c.Path)
-	if len(c.Query.Encode()) > 0 {
-		p += "?" + c.Query.Encode()
-	}
-	mux.HandleFunc(p, s.simpleIcal)
+	mux.HandleFunc(path.Join("/", c.Path), s.simpleIcal)
 	return s, nil
 }
 
@@ -62,8 +60,12 @@ func (s *Server) healthcheck(w http.ResponseWriter, req *http.Request) {
 }
 
 func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
+
+	// TODO: validate query params
+
 	jsons, err := s.f.Get()
 	if err != nil {
+		log.Printf("error: %v\n", util.WrapError(err))
 		w.Header().Add("REASON", "error occurred when Get()")
 		w.WriteHeader(http.StatusInternalServerError)
 		return
@@ -72,6 +74,7 @@ func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
 	for _, j := range jsons {
 		v := map[string]interface{}{}
 		if err := json.Unmarshal([]byte(j), &v); err != nil {
+			log.Printf("error: %v\n", util.WrapError(err))
 			w.Header().Add("REASON", "error occurred when json.Unmarshal()")
 			w.WriteHeader(http.StatusInternalServerError)
 			return
@@ -81,6 +84,7 @@ func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
 
 	ical, err := s.c.SimpleIcal(tmp)
 	if err != nil {
+		log.Printf("error: %v\n", util.WrapError(err))
 		w.Header().Add("REASON", "error occurred when convert to iCal format")
 		w.WriteHeader(http.StatusInternalServerError)
 		return
