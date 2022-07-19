@@ -98,7 +98,7 @@ func main() {
 			},
 			&cli.StringFlag{
 				Category: "redmine",
-				Name:     "redmine-query",
+				Name:     "redmine-query", // TODO: dynamic configuration
 				EnvVars:  []string{envPrefix + "REDMINE_QUERY"},
 			},
 			&cli.IntFlag{
