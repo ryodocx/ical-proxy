@@ -1,6 +1,6 @@
 # ical-proxy
 
-A proxy server convert to iCal from any sources
+A proxy server convert from any sources to [iCalendar](https://datatracker.ietf.org/doc/html/rfc5545) via [OPA/Rego](https://www.openpolicyagent.org/)
 
 ![architecture](docs/architecture.drawio.png)
 
@@ -9,10 +9,13 @@ A proxy server convert to iCal from any sources
 * Input
   * [x] [Redmine Issue](https://www.redmine.org/projects/redmine/wiki/Rest_Issues)
   * [ ] [Redmine Version](https://www.redmine.org/projects/redmine/wiki/Rest_Versions)
-  * [ ] [External iCalendar]()
+  * [ ] [GitLab issue]()
+  * [ ] [GitHub issue]()
   * [ ] [RSS 1.0]()
   * [ ] [RSS 2.0]()
   * [ ] [Atom]()
+  * [ ] [External iCalendar]()
+  * [ ] [External OPA Server]()
 * Output
   * [x] [iCalendar(VEVENT)](https://datatracker.ietf.org/doc/html/rfc5545)
 
@@ -41,10 +44,11 @@ $ curl http://localhost:8080
   * https://support.apple.com/ja-jp/guide/calendar/icl1022/mac
 * Outlook
   * https://support.microsoft.com/ja-jp/office/outlook-com-%E3%81%A7%E4%BA%88%E5%AE%9A%E8%A1%A8%E3%82%92%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%81%BE%E3%81%9F%E3%81%AF%E8%B3%BC%E8%AA%AD%E3%81%99%E3%82%8B-cff1429c-5af6-41ec-a5b4-74f2c278e98c
+* Google Calendar
+  * https://support.google.com/calendar/answer/37100?hl=ja&co=GENIE.Platform%3DDesktop#:~:text=%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E4%B8%80%E8%88%AC%E5%85%AC%E9%96%8B%E3%81%AE%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B
 
 ## Convert & Filtering
-
-* Convert to iCal from any feed via [OPA/Rego](https://www.openpolicyagent.org/)
+* Use [OPA/Rego](https://www.openpolicyagent.org/)
 * OPA output is read as single VEVENT
 * VEVENT Spec: https://datatracker.ietf.org/doc/html/rfc5545#section-3.6.1
 * example: [./configs](./configs/)
