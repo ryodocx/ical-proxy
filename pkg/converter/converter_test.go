@@ -1,7 +1,6 @@
 package converter_test
 
 import (
-	"fmt"
 	"os"
 	"path"
 	"testing"
@@ -45,5 +44,5 @@ func TestXxx(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	t.Log(fmt.Sprintf("ical:\n%s", output))
+	t.Logf("ical:\n%s", output)
 }

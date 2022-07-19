@@ -49,19 +49,20 @@ func (s *Server) healthcheck(w http.ResponseWriter, req *http.Request) {
 		jsonResp, _ := json.Marshal(map[string]string{
 			"error": err.Error(),
 		})
-		w.Write(jsonResp)
+		_, _ = w.Write(jsonResp)
 	} else {
 		w.WriteHeader(http.StatusOK)
 		jsonResp, _ := json.Marshal(map[string]string{
 			"msg": "ok",
 		})
-		w.Write(jsonResp)
+		_, _ = w.Write(jsonResp)
 	}
 }
 
 func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
 
 	// TODO: validate query params
+	_ = s.q
 
 	jsons, err := s.f.Get()
 	if err != nil {
@@ -87,7 +88,7 @@ func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	w.Write([]byte(ical))
+	_, _ = w.Write([]byte(ical))
 }
 
 func (s *Server) ListenAndServe() error {
