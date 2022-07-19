@@ -25,6 +25,9 @@ A proxy server convert from any sources to [iCalendar](https://datatracker.ietf.
   * `docker pull ghcr.io/ryodocx/ical-proxy:v1`
 
 ```sh
+# show help
+$ docker run --rm -it ghcr.io/ryodocx/ical-proxy:v1 -h
+
 # edit .env
 $ cat .env
 ICALPROXY_REDMINE_URL="https://redmine.example.com/path/"
