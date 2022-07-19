@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/url"
 
-	redmineClient "github.com/ryodocx/go-redmine/v2"
+	redmineClient "github.com/ryodocx/go-redmine"
 )
 
 type Config struct {
