@@ -174,6 +174,7 @@ func main() {
 					}
 				}
 
+				// TODO: improve shutdown process
 				// graceful shutdown
 			shutdown:
 				log.Println("shutting down...")
