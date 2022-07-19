@@ -76,7 +76,7 @@ func main() {
 			},
 			&cli.DurationFlag{
 				Category: "server",
-				Name:     "grace-period",
+				Name:     "grace-period", // TODO: add grace period before start shutdown
 				Value:    time.Second * 3,
 				EnvVars:  []string{envPrefix + "GRACE_PERIOD"},
 			},
