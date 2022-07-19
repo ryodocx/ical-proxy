@@ -66,7 +66,6 @@ func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
 	jsons, err := s.f.Get()
 	if err != nil {
 		log.Printf("error: %v\n", util.WrapError(err))
-		w.Header().Add("REASON", "error occurred when Get()")
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
@@ -75,7 +74,6 @@ func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
 		v := map[string]interface{}{}
 		if err := json.Unmarshal([]byte(j), &v); err != nil {
 			log.Printf("error: %v\n", util.WrapError(err))
-			w.Header().Add("REASON", "error occurred when json.Unmarshal()")
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
@@ -85,7 +83,6 @@ func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
 	ical, err := s.c.SimpleIcal(tmp)
 	if err != nil {
 		log.Printf("error: %v\n", util.WrapError(err))
-		w.Header().Add("REASON", "error occurred when convert to iCal format")
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
