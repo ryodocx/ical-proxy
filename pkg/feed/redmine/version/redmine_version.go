@@ -21,7 +21,7 @@ type redmine struct {
 }
 
 func New(c *Config) (*redmine, error) {
-	newClient, err := redmineClient.NewClient(c.Url, c.ApiKey)
+	newClient, err := redmineClient.NewClient(c.Url, c.ApiKey, redmineClient.OptionDebugMode(true))
 	if err != nil {
 		return nil, err
 	}
@@ -32,7 +32,11 @@ func New(c *Config) (*redmine, error) {
 }
 
 func (s *redmine) Get() (entries []string, err error) {
-	tmp, err := s.client.GetVersions(s.config.Project, s.config.Query, s.config.MaxEntries)
+	tmp, err := s.client.GetProjectVersions(
+		s.config.Project,
+		redmineClient.ReqOptionQuery(s.config.Query),
+		redmineClient.ReqOptionLimit(s.config.MaxEntries),
+	)
 	if err != nil {
 		return nil, err
 	}

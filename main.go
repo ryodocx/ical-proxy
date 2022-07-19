@@ -13,17 +13,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ryodocx/go-redmine/v2"
 	"github.com/ryodocx/ical-proxy/pkg/converter"
 	"github.com/ryodocx/ical-proxy/pkg/feed/redmine/issue"
 	"github.com/ryodocx/ical-proxy/pkg/server"
 	"github.com/ryodocx/ical-proxy/pkg/util"
 	"github.com/urfave/cli/v2"
 )
-
-func init() {
-	redmine.DebugMode = true
-}
 
 func main() {
 
