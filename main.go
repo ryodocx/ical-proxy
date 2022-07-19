@@ -29,7 +29,7 @@ func main() {
 	}
 
 	app := &cli.App{
-		Usage:           "generage iCal from any sources",
+		Usage:           "generage iCalendar from any sources",
 		HideHelpCommand: true,
 		Flags: []cli.Flag{
 			&cli.StringSliceFlag{
