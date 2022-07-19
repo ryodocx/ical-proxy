@@ -102,6 +102,7 @@ func main() {
 				EnvVars:  []string{envPrefix + "REDMINE_MAXFETCH"},
 			},
 		},
+		// TODO: split as subcommands per source types
 		Action: func(cCtx *cli.Context) error {
 
 			serverConf := &server.Config{
