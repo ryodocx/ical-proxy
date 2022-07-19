@@ -36,7 +36,9 @@ func main() {
 				Name:  "vcalendar-properties",
 				Usage: "Properties for VCALENDAR: https://datatracker.ietf.org/doc/html/rfc5545#section-3.7",
 				Value: cli.NewStringSlice(
+					"VERSION:2.0",
 					"PRODID:https://github.com/ryodocx/ical-proxy",
+					"X-WR-TIMEZONE:Asia/Tokyo",
 					"X-PUBLISHED-TTL;VALUE=DURATION:PT30M", // https://docs.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxcical/1fc7b244-ecd1-4d28-ac0c-2bb4df855a1f
 				),
 				EnvVars: []string{envPrefix + "VCALENDAR_PROPERTIES"},
