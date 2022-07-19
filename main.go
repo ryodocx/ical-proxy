@@ -93,6 +93,11 @@ func main() {
 			},
 			&cli.StringFlag{
 				Category: "redmine",
+				Name:     "redmine-switch-user", // TODO: implementation
+				EnvVars:  []string{envPrefix + "REDMINE_SWITCH_USER"},
+			},
+			&cli.StringFlag{
+				Category: "redmine",
 				Name:     "redmine-query",
 				EnvVars:  []string{envPrefix + "REDMINE_QUERY"},
 			},
