@@ -33,8 +33,9 @@ func main() {
 		HideHelpCommand: true,
 		Flags: []cli.Flag{
 			&cli.StringSliceFlag{
-				Name:  "vcalendar-properties",
-				Usage: "Properties for VCALENDAR: https://datatracker.ietf.org/doc/html/rfc5545#section-3.7",
+				Category: "ical",
+				Name:     "vcalendar-properties",
+				Usage:    "Properties for VCALENDAR",
 				Value: cli.NewStringSlice(
 					"VERSION:2.0",
 					"PRODID:https://github.com/ryodocx/ical-proxy",
