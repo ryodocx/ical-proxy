@@ -39,7 +39,7 @@ func New(c *Config) (*Server, error) {
 		c: c.Converter,
 	}
 	mux.HandleFunc("/healthz", s.healthcheck)
-	mux.HandleFunc(path.Join("/", c.Path), s.simpleIcal)
+	mux.HandleFunc(path.Join("/", c.Path), s.ical)
 	return s, nil
 }
 
@@ -59,7 +59,7 @@ func (s *Server) healthcheck(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func (s *Server) simpleIcal(w http.ResponseWriter, req *http.Request) {
+func (s *Server) ical(w http.ResponseWriter, req *http.Request) {
 
 	// TODO: validate query params
 	_ = s.q
