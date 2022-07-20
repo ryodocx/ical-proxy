@@ -3,7 +3,7 @@ module github.com/ryodocx/ical-proxy
 go 1.18
 
 require (
-	github.com/open-policy-agent/opa v0.42.1
+	github.com/open-policy-agent/opa v0.42.2
 	github.com/ryodocx/go-redmine/v2 v2.0.0-rc0.0.20220717103701-ac60cc210ee4
 	github.com/urfave/cli/v2 v2.11.0
 )
