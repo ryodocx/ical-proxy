@@ -174,7 +174,7 @@ func main() {
 					signal.Notify(sigChan)
 					signal.Ignore(syscall.SIGURG) // https://golang.hateblo.jp/entry/golang-signal-urgent-io-condition
 					recievedSignal := <-sigChan
-					log.Println("signal recieved:", fmt.Sprintf("%d(%s)", recievedSignal, recievedSignal.String()))
+					log.Println("signal received:", fmt.Sprintf("%d(%s)", recievedSignal, recievedSignal.String()))
 
 					for _, s := range []os.Signal{os.Interrupt, syscall.SIGTERM} {
 						if recievedSignal == s {
