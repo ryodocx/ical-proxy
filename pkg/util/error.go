@@ -1,5 +1,7 @@
 package util
 
+// TODO: move to https://github.com/ryodocx/golib
+
 import (
 	"fmt"
 	"runtime"
