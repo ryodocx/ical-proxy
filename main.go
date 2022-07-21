@@ -31,6 +31,7 @@ func main() {
 	app := &cli.App{
 		Usage:           "generage iCalendar from any sources",
 		HideHelpCommand: true,
+		// Version: "", // TODO: set version
 		Flags: []cli.Flag{
 			&cli.StringSliceFlag{
 				Category: "ical",
