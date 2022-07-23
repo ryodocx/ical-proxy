@@ -174,11 +174,11 @@ func main() {
 					sigChan := make(chan os.Signal, 1)
 					signal.Notify(sigChan)
 					signal.Ignore(syscall.SIGURG) // https://golang.hateblo.jp/entry/golang-signal-urgent-io-condition
-					recievedSignal := <-sigChan
-					log.Println("signal received:", fmt.Sprintf("%d(%s)", recievedSignal, recievedSignal.String()))
+					receivedSignal := <-sigChan
+					log.Println("signal received:", fmt.Sprintf("%d(%s)", receivedSignal, receivedSignal.String()))
 
 					for _, s := range []os.Signal{os.Interrupt, syscall.SIGTERM} {
-						if recievedSignal == s {
+						if receivedSignal == s {
 							goto shutdown
 						}
 					}
