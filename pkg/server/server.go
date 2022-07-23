@@ -38,6 +38,7 @@ func New(c *Config) (*Server, error) {
 		f: c.Feed,
 		c: c.Converter,
 	}
+	// TODO: caching
 	mux.HandleFunc("/healthz", s.healthcheck)
 	mux.HandleFunc(path.Join("/", c.Path), s.ical)
 	return s, nil
