@@ -10,6 +10,7 @@ import (
 	"os"
 	"os/signal"
 	"path"
+	"runtime/debug"
 	"syscall"
 	"time"
 
@@ -20,7 +21,20 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+// build info
+var version string
+
 func main() {
+
+	// set app version
+	i, _ := debug.ReadBuildInfo()
+	if version == "" {
+		if i.Main.Version != "(devel)" {
+			version = i.Main.Version
+		} else {
+			version = "unknown"
+		}
+	}
 
 	envPrefix := "ICALPROXY_"
 	wd, err := os.Getwd()
@@ -31,7 +45,8 @@ func main() {
 	app := &cli.App{
 		Usage:           "generage iCalendar from any sources",
 		HideHelpCommand: true,
-		// Version: "", // TODO: set version
+		Version:         version,
+		// Suggest:         true,
 		Flags: []cli.Flag{
 			&cli.StringSliceFlag{
 				Category: "ical",
