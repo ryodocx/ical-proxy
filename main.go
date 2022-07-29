@@ -44,7 +44,7 @@ func main() {
 	}
 
 	app := &cli.App{
-		Usage:           "generage iCalendar from any sources",
+		Usage:           "generate iCalendar from any sources",
 		HideHelpCommand: true,
 		Version:         version,
 		// Suggest:         true,
