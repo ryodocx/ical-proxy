@@ -35,6 +35,7 @@ func main() {
 			version = "unknown"
 		}
 	}
+	// TODO: indicate exists unstaged changes
 
 	envPrefix := "ICALPROXY_"
 	wd, err := os.Getwd()
