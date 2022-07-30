@@ -1,13 +1,12 @@
 package converter_test
 
 import (
-	"fmt"
 	"os"
 	"path"
 	"testing"
 	"time"
 
-	"github.com/ryodocx/go-redmine/v2"
+	"github.com/ryodocx/go-redmine"
 	"github.com/ryodocx/ical-proxy/pkg/converter"
 )
 
@@ -45,5 +44,5 @@ func TestXxx(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	t.Log(fmt.Sprintf("ical:\n%s", output))
+	t.Logf("ical:\n%s", output)
 }

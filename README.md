@@ -1,5 +1,10 @@
 # ical-proxy
 
+[![lint](https://github.com/ryodocx/ical-proxy/actions/workflows/golangci-lint.yaml/badge.svg)](https://github.com/ryodocx/ical-proxy/actions/workflows/golangci-lint.yaml)
+[![CodeQL](https://github.com/ryodocx/ical-proxy/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/ryodocx/ical-proxy/actions/workflows/codeql-analysis.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ryodocx/ical-proxy)](https://goreportcard.com/report/github.com/ryodocx/ical-proxy)
+[![GoDoc](https://pkg.go.dev/badge/github.com/ryodocx/ical-proxy?status.svg)](https://pkg.go.dev/github.com/ryodocx/ical-proxy)
+
 A proxy server convert from any sources to [iCalendar](https://datatracker.ietf.org/doc/html/rfc5545) via [OPA/Rego](https://www.openpolicyagent.org/)
 
 ![architecture](docs/architecture.drawio.png)
@@ -24,7 +29,12 @@ A proxy server convert from any sources to [iCalendar](https://datatracker.ietf.
 * Docker Image is [here](https://github.com/ryodocx/ical-proxy/pkgs/container/ical-proxy)
   * `docker pull ghcr.io/ryodocx/ical-proxy:v1`
 
+### Redmine Source
+
 ```sh
+# show help
+$ docker run --rm -it ghcr.io/ryodocx/ical-proxy redmine -h
+
 # edit .env
 $ cat .env
 ICALPROXY_REDMINE_URL="https://redmine.example.com/path/"

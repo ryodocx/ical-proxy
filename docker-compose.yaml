@@ -1,10 +1,12 @@
 version: "3"
 services:
-  ical-proxy:
-    image: ghcr.io/ryodocx/ical-proxy:v1
+  ical-proxy-redmine:
+    image: ghcr.io/ryodocx/ical-proxy
     ports:
       - 8080:8080
     volumes:
       - ./configs:/configs:ro
+    command:
+      - redmine
     env_file:
       - .env
