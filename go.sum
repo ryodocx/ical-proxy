@@ -50,8 +50,8 @@ github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 h1:N/ElC8H3+5X
 github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475/go.mod h1:bCqnVzQkZxMG4s8nGwiZ5l3QUCyqpo9Y+/ZMZ9VjZe4=
 github.com/russross/blackfriday/v2 v2.1.0 h1:JIOH55/0cWyOuilr9/qlrm0BSXldqnqwMsf35Ld67mk=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
-github.com/ryodocx/go-redmine v1.0.0 h1:nD4mPA5UfkZRIX1JB7DbomUri7QR0hNC2ngPV9Q1U7Y=
-github.com/ryodocx/go-redmine v1.0.0/go.mod h1:ky6lh01Kqh4YMu6BYRofSse2UyjlQ8SroPc92EjQrm4=
+github.com/ryodocx/go-redmine v1.0.2 h1:cr+k/1EDUsJvnV66osRnL8pfAnuMoQZKJiMq/MW4XKo=
+github.com/ryodocx/go-redmine v1.0.2/go.mod h1:VwCqcN3PxYOnHaLoD9mhKq9tUKDkobcl1aMpEdbRh2A=
 github.com/sergi/go-diff v1.1.0 h1:we8PVUC3FE2uYfodKH/nBHMSetSfHDR6scGdBi+erh0=
 github.com/sirupsen/logrus v1.9.0 h1:trlNQbNUG3OdDrDil03MCb1H2o9nJ1x4/5LYw7byDE0=
 github.com/stretchr/testify v1.8.0 h1:pSgiaMZlXftHpm5L7V1+rVB+AZJydKsMxsQBIJw4PKk=
