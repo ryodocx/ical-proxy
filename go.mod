@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/open-policy-agent/opa v0.44.0
 	github.com/ryodocx/go-redmine v1.0.0
-	github.com/urfave/cli/v2 v2.14.1
+	github.com/urfave/cli/v2 v2.16.2
 )
 
 require (
