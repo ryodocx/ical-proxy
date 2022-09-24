@@ -1,6 +1,6 @@
 module github.com/ryodocx/ical-proxy
 
-go 1.18
+go 1.19
 
 require (
 	github.com/open-policy-agent/opa v0.44.0
