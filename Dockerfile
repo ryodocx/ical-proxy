@@ -1,4 +1,4 @@
-FROM golang:1.19.3-alpine
+FROM golang:1.19.4-alpine
 RUN apk add git
 ENV CGO_ENABLED=0
 WORKDIR /
