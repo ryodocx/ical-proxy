@@ -1,0 +1,48 @@
+- 汎用の構造データ変換システム
+  - APIによるpullを前提に設計する
+  - OPAの実行については、公式イメージを使っても良い
+    - https://www.openpolicyagent.org/docs/latest/deployments/
+    - プロセス分離されることで構成が複雑化する恐れはある
+- 拡張可能なレイヤ構造
+  - plugin式のデータ入力(取得)層
+  - OPA/Regoに依る変換層
+    - https://openpolicyregistry.io 対応
+  - User識別を可能とする認証層
+    - JWTでOPA側に情報を引き渡せるようにしたい
+    - https://dexidp.io など、OIDC認証連携を前提に組む
+    - あくまでもoptional
+    - 単に、OIDC認証連携の結果を信頼してToken発行を行う何かがあればよい？
+    - JWTの正当性検証は必要
+    - queryパラメータに認証情報を入れる前提
+- 入力フォーマット
+  - Redmine Issue
+  - Redmine Version
+  - GitLab issue
+  - GitHub issue
+  - RSS 1.0
+  - RSS 2.0
+  - Atom feed
+  - External iCalendar
+  - External OPA Server
+  - StatusPageのAPI?
+    - Atom feedのUpdate
+  - Twitter
+  - Mastodon
+- 出力フォーマット
+  - iCal
+  - RSS 2.0
+  - Atom feed
+  - 独自フォーマット API
+- 独自フォーマット
+  - 情報のリスト構造を標準化したい
+  - 他のツールでもAPI以外のViewを提供しやすくなるはず
+  - 特に https://raycast.com との連携を意識したい
+- キャッシュ機構
+- K8sフレンドリー
+  - helm chart
+- iCalのwebビューアー
+- 複数イベントソースのアグリゲーション
+  - 標準フォーマット経由？
+- XMLをOPAで処理する
+  - JSON変換が必要
+  - https://www.site24x7.com/ja/tools/xml-to-json.html
