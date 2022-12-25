@@ -46,3 +46,4 @@
 - XMLをOPAで処理する
   - JSON変換が必要
   - https://www.site24x7.com/ja/tools/xml-to-json.html
+- JSON Schemaで入力データバリデーション
