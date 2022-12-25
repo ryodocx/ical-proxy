@@ -28,6 +28,7 @@
     - Atom feedのUpdate
   - Twitter
   - Mastodon
+  - Prometheus AlertManager
 - 出力フォーマット
   - iCal
   - RSS 2.0
