@@ -15,25 +15,41 @@
     - JWTの正当性検証は必要
     - queryパラメータに認証情報を入れる前提
 - 入力フォーマット
-  - Redmine Issue
-  - Redmine Version
-  - GitLab issue
-  - GitHub issue
+  - ファイル
+  - Redmine Issue, Version
+  - GitLab issue, Release
+  - GitHub issue, Release
   - RSS 1.0
   - RSS 2.0
   - Atom feed
-  - External iCalendar
-  - External OPA Server
-  - StatusPageのAPI?
-    - Atom feedのUpdate
+  - StatusPage
+    - 特に重視するユースケースにしたい。GrafanaのAnnotation用Datasourceにも。
+    - API?
+    - Atom feedのUpdateがpublishとおなじになっている件
   - Twitter
   - Mastodon
   - Prometheus AlertManager
+  - Calendar
+    - External iCalendar
+    - 365
+    - Google
+    - https://connpass.com/
+      - https://connpass.com/about/api/
+    - その他イベント管理プラットフォーム
+    - https://github.com/public-apis/public-apis#calendar
+  - 標準フォーマットAPI
+    - 任意のデータソース対応するため、一度標準フォーマットを経由するパターン
+    - 仕様を公開しておけば、実装は任意の言語・形態で可能になる
+  - その他API
+    - https://github.com/public-apis/public-apis
+    - https://rapidapi.com/hub
+    - https://www.postman.com/explore
 - 出力フォーマット
   - iCal
-  - RSS 2.0
+  - ~~RSS 2.0~~ Atomだけで十分？
   - Atom feed
-  - 独自フォーマット API
+  - 標準フォーマット
+  - 任意フォーマット
 - 独自フォーマット
   - 情報のリスト構造を標準化したい
   - 他のツールでもAPI以外のViewを提供しやすくなるはず
@@ -48,3 +64,30 @@
   - JSON変換が必要
   - https://www.site24x7.com/ja/tools/xml-to-json.html
 - JSON Schemaで入力データバリデーション
+- 標準出力フォーマット
+  - メタデータ, リストメタデータ, アイテムリストを持つ
+  - リストメタデータ
+    - アイテム数、範囲外アイテムの有無等を示す
+    - ソート順
+  - フォーマットの型(Kind)がある
+    - 単一データのみの単純な構造
+    - 時間をもつイベントのリスト
+      - 時間 = 日付
+      - 時間 = 開始/終了時刻
+    - 時間を持たないアイテムのリスト
+  - 返却するHTTP StatusCode, Header等の制御をできるようにしたい
+- ユースケース
+  - リリース予定
+    - Redmine issue
+  - 新刊情報
+    - 技術評論社: https://gihyo.jp/feed
+    - オライリー: https://www.oreilly.co.jp/feeds/
+  - Connpassのイベント
+    - https://connpass.com/api/v1/event/?count=100&series_id=2033&order=2&ym=202212,202211,202210
+  - StatusPageの障害履歴 ★Grafana annotationもやりたい
+    - https://status.sendgrid.com/history
+  - リリース予定日(google calendar)
+    - https://kubernetes.io/releases/#upcoming-release
+    - https://calendar.google.com/calendar/u/0/embed?src=agst.us_b07popf7t4avmt4km7eq5tk5ao@group.calendar.google.com&pli=1
+  - チームメイトの休暇予定
+    - 365?
