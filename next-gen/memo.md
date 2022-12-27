@@ -1,11 +1,12 @@
-- 汎用の構造データ変換システム
-  - APIによるpullを前提に設計する
-  - OPAの実行については、公式イメージを使っても良い
-    - https://www.openpolicyagent.org/docs/latest/deployments/
-    - プロセス分離されることで構成が複雑化する恐れはある
-- 拡張可能なレイヤ構造
-  - plugin式のデータ入力(取得)層
+- コンセプト: 汎用的な構造データ変換システム
+  - pullを前提に設計する
+  - pushはfluentdやvector的なイメージだが、この逆。
+- 拡張可能な設計にする
+  - データ入力(取得)層
+    - 対応フォーマットを増やせる構造にする。
+    - できれば本体に手を加えなくても拡張可能にしたいが。。。
   - OPA/Regoに依る変換層
+    - Regoで書くのでなんでもござれ
     - https://openpolicyregistry.io 対応
   - User識別を可能とする認証層
     - JWTでOPA側に情報を引き渡せるようにしたい
@@ -91,3 +92,6 @@
     - https://calendar.google.com/calendar/u/0/embed?src=agst.us_b07popf7t4avmt4km7eq5tk5ao@group.calendar.google.com&pli=1
   - チームメイトの休暇予定
     - 365?
+- OPAの実行については、公式イメージを使っても良い
+  - https://www.openpolicyagent.org/docs/latest/deployments/
+  - プロセス分離されることで構成が複雑化する恐れはある
