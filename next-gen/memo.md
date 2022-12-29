@@ -5,7 +5,9 @@
   - SaaSとして、有用なRSSのiCal化等を提供する
   - サードパーティのRego Scriptを登録、サービス提供できるサイトになると良い？
 - なまえ
-  - ...
+  - feed proxy
+  - feed eater
+  - data retiever
 - 拡張可能な設計にする
   - データ入力(取得)層
     - 対応フォーマットを増やせる構造にする。
