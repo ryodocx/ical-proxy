@@ -3,7 +3,7 @@ module github.com/ryodocx/ical-proxy
 go 1.19
 
 require (
-	github.com/open-policy-agent/opa v0.57.1
+	github.com/open-policy-agent/opa v0.58.0
 	github.com/ryodocx/go-redmine v1.0.2
 	github.com/urfave/cli/v2 v2.25.7
 )
@@ -38,8 +38,8 @@ require (
 	go.opentelemetry.io/otel/metric v1.19.0 // indirect
 	go.opentelemetry.io/otel/sdk v1.19.0 // indirect
 	go.opentelemetry.io/otel/trace v1.19.0 // indirect
-	golang.org/x/sys v0.12.0 // indirect
+	golang.org/x/sys v0.13.0 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	sigs.k8s.io/yaml v1.3.0 // indirect
+	sigs.k8s.io/yaml v1.4.0 // indirect
 )
