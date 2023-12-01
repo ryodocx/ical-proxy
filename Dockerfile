@@ -8,7 +8,7 @@ RUN go mod download
 COPY . .
 RUN go install -ldflags "-X main.version=$(git describe --tags)"
 
-FROM alpine:3.18.4
+FROM alpine:3.18.5
 ENV ICALPROXY_LISTEN_ADDR=0.0.0.0:8080
 COPY --from=0 /go/bin/ical-proxy /usr/local/bin/
 ENTRYPOINT [ "ical-proxy" ]
